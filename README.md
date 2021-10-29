@@ -2,4 +2,6 @@
 Imitation Elzero Life [Elzero.net](https://elzero.net)
 
 
-[Demo](https://elzeronet.netlify.app/)
+[Demo In Netlify](https://elzeronet.netlify.app/)
+
+[Demo In Github](https://marwanzayed.github.io/elzero.net/)
