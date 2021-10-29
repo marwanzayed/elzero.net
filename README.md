@@ -1,2 +1,2 @@
 # elzero.net
-Imitation Elzero Life !(elzero.net)[https://elzero.net]
+Imitation Elzero Life https://elzero.net
