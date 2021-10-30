@@ -1,7 +1,7 @@
+/* Start Global Rules */
+
 :root {
-  --main-blue: #2196f3;
-  --main-green: #23a96e;
-  --main-orange: #ff5722;
+  --main-color: #2196f3;
 }
 * {
   margin: 0;
@@ -18,6 +18,18 @@ ul {
 a {
   text-decoration: none;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0 transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
 .card {
   padding-right: 15px;
   padding-left: 15px;
@@ -39,15 +51,54 @@ a {
     width: 1170px;
   }
 }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   grid-gap: 20px;
 }
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 992px) {
+  .flex .box {
+    flex: 0 0 calc(25% - 20px);
+    width: calc(25% - 20px);
+    margin: 10px;
+  }
+}
+@media (min-width: 700px) and (max-width: 991px) {
+  .flex .box {
+    flex: 0 0 calc(100% / 3 - 20px);
+    width: calc(100% / 3 - 20px);
+    margin: 10px;
+  }
+}
+@media (min-width: 470px) and (max-width: 699px) {
+  .flex .box {
+    flex: 0 0 calc(100% / 2 - 20px);
+    width: calc(100% / 2 - 20px);
+    margin: 10px;
+  }
+}
+@media (max-width: 469px) {
+  .flex .box {
+    flex: 0 0 calc(100% - 20px);
+    width: calc(100% - 20px);
+    margin: 10px;
+  }
+}
+
 img {
   width: 100%;
 }
+
+/* End Global Rules */
+
 /* Start Header */
+
 header {
   height: 70px;
   background-color: #fff;
@@ -63,7 +114,7 @@ header .card {
 }
 header .logo {
   text-decoration: none;
-  color: var(--main-blue);
+  color: var(--main-color);
   font-size: 26px;
   font-weight: bold;
 }
@@ -71,13 +122,16 @@ header .nav a {
   color: #000;
   transition: all 0.2s;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
 }
 header .nav a:hover {
-  color: var(--main-blue);
+  color: var(--main-color);
 }
+
 /* End Header */
+
 /* Start Landing */
+
 .landing {
   display: flex;
   justify-content: center;
@@ -118,9 +172,13 @@ header .nav a:hover {
     font-size: 20px;
   }
 }
+
 /* End Landing */
+
 /* Start Books Page */
+
 /* Start Head */
+
 .head {
   text-align: center;
   padding: 25px 0;
@@ -136,8 +194,11 @@ header .nav a:hover {
   margin: 15px 0 10px;
   font-weight: 300;
 }
+
 /* End Head */
+
 /* Start Control */
+
 .control {
   background-color: #fafafa;
   margin-bottom: 20px;
@@ -147,7 +208,7 @@ header .nav a:hover {
   align-items: center;
 }
 .control .count span:first-child {
-  color: var(--main-blue);
+  color: var(--main-color);
   font-weight: bold;
 }
 .control .count span:last-child {
@@ -174,7 +235,7 @@ header .nav a:hover {
   transition: all 0.3s;
 }
 .control .icon .list-view:hover span {
-  background-color: var(--main-blue);
+  background-color: var(--main-color);
 }
 .control .icon .grid-view {
   width: 50px;
@@ -196,21 +257,80 @@ header .nav a:hover {
   transition: all 0.3s;
 }
 .control .icon .grid-view:hover span {
-  background-color: var(--main-blue);
+  background-color: var(--main-color);
 }
 .control .icon .active span {
-  background-color: var(--main-blue);
+  background-color: var(--main-color);
 }
+
 /* End Control */
+
 /* Start Books */
+
+/* Start Normal Modo */
+
 .books {
   margin-bottom: 20px;
 }
+.books .box {
+  background-color: #fafafa;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  direction: rtl;
+}
+.books .box a {
+  overflow: hidden;
+}
+.books .box .top {
+  position: absolute;
+  transition: 0.3s;
+  padding: 10px 5px;
+  font-weight: bold;
+  font-size: 13px;
+  background-color: var(--main-color);
+  color: white;
+  position: absolute;
+  line-height: 1.6;
+  bottom: -50px;
+  left: 10px;
+  right: 10px;
+}
+.books .box .bottom {
+  position: absolute;
+  transition: 0.3s;
+  padding: 10px 5px;
+  font-weight: bold;
+  font-size: 13px;
+  background-color: var(--main-color);
+  color: white;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  line-height: 1.6;
+  top: -50px;
+}
+.books .box:hover .bottom {
+  top: 10px;
+}
+.books .box:hover .top {
+  bottom: 10px;
+}
+
+/* End Normal Modo */
+
+/* Start List Modo */
+
 .books.list img {
   display: none;
 }
 .books.list .grid {
   display: block;
+}
+.books.list .flex .box {
+  flex: 0 0 100%;
+  margin: 10px 0;
 }
 .books.list .box {
   margin-bottom: 20px;
@@ -241,60 +361,48 @@ header .nav a:hover {
 .books.list .box a:hover {
   background-color: #e1e1e1;
 }
-.books .box {
-  background-color: #fafafa;
-  padding: 10px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  direction: rtl;
-}
-.books .box a {
-  overflow: hidden;
-}
-.books .box .top {
-  position: absolute;
-  transition: 0.3s;
-  padding: 10px 5px;
-  font-weight: bold;
-  font-size: 13px;
-  background-color: var(--main-blue);
-  color: white;
-  position: absolute;
-  line-height: 1.6;
-  bottom: -50px;
-  width: 91%;
-  left: 10px;
-  right: 10px;
-}
-.books .box .bottom {
-  position: absolute;
-  transition: 0.3s;
-  padding: 10px 5px;
-  font-weight: bold;
-  font-size: 13px;
-  background-color: var(--main-blue);
-  color: white;
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  width: 91%;
-  line-height: 1.6;
-  top: -50px;
-}
-.books .box:hover .bottom {
-  top: 10px;
-}
-.books .box:hover .top {
-  bottom: 10px;
-}
+
+/* End List Modo */
+
 /* End Books */
+
 /* End Books Page */
+
+/* Start Books Folder */
+
+.content-book {
+  direction: rtl;
+  height: calc(100vh - (70px + 64px));
+  background-color: #fafafa;
+  padding: 20px;
+}
+.content-book .title {
+  margin-top: 50px;
+  margin: 10px 0;
+}
+.content-book .title,
+.content-book .author {
+  font-size: 20px;
+}
+.content-book .title h3,
+.content-book .author h3 {
+  display: inline-block;
+  font-size: 20px;
+  transition: all 0.3s linear;
+}
+.content-book .title h3:hover,
+.content-book .author h3:hover {
+  color: var(--main-color);
+}
+
+/* End Books Folder */
+
 /* Start Footer */
+
 .footer {
   text-align: center;
   height: 64px;
-  background-color: var(--main-green);
+  background-color: var(--main-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -302,4 +410,5 @@ header .nav a:hover {
   font-size: 20px;
   font-weight: 300;
 }
+
 /* End Footer */
