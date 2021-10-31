@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2066 نقطة الصفر | Elzero Life</title>
+    <title>دار بداية | Elzero Life</title>
     <!-- Main CSS File -->
     <link rel="stylesheet" href="../css/elzero.css" />
 
@@ -33,25 +33,45 @@
     <div class="card">
       <!-- Start Head -->
       <div class="head">
-        <h2>2066 نقطة الصفر</h2>
+        <h2>دار بداية</h2>
       </div>
       <!-- End Head -->
-      <!-- Start Main Content -->
-      <div class="content">
-        <div class="info">
-          <img src="../images/default-logo.jpg" alt="" />
-          <div class="title">الناشر</div>
-          <div class="author">دار دارك</div>
-          <a href="../tag/دارك.html">جميع كتب الدار</a>
-        </div>
-        <div class="info">
-          <img src="../images/default-person.jpg" alt="" />
-          <div class="title">الكاتب</div>
-          <div class="author">شهاب الدين سعودي</div>
-          <a href="../tag/شهاب الدين سعودي.html">جميع كتب الكاتب</a>
+      <!-- Start Control -->
+      <div class="control">
+        <div class="count"><span>1</span> <span>Books</span></div>
+        <div class="icon">
+          <div class="list-view" title="List View" id="listView">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="grid-view active" title="Grid View" id="gridView">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
-      <!-- End Main Content -->
+      <!-- End Control -->
+      <!-- Start Books -->
+      <div class="books" id="books" dir="rtl">
+        <div class="grid">
+          <div class="box">
+            <a href="../books/1984.html">
+              <img src="../images/1984.jpg" width="330" hight="48" alt="1984" />
+              <div class="top">1984</div>
+              <div class="bottom">جورج اورويل</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- End Books -->
     </div>
 
     <!-- End Content -->
@@ -59,5 +79,6 @@
     <!-- Start Footer -->
     <footer class="footer">Made With &lt;3 By Elzero</footer>
     <!-- End Footer -->
+    <script src="../js/elzero.js"></script>
   </body>
 </html>
